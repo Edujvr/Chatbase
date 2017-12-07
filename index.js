@@ -4,9 +4,7 @@ const express = require('express');
 const app = express();
 app.use(require('body-parser').json());
 app.listen(process.env.PORT || 8080);
-var chatbase = require('@google/chatbase')
-	.setApiKey(process.env.c0f0424f-cf81-4f54-8287-006327e7bf4d) // Your Chatbase API Key
-	.setPlatform('Dialogflow'); // The platform you are interacting with the user over
+var chatbase = require('@google/chatbase');
 
 app.post("/webhook", (req, res, next) => {  
   const action = req.body.result.action;
@@ -16,7 +14,7 @@ app.post("/webhook", (req, res, next) => {
 	var msg = chatbase.newMessage('c0f0424f-cf81-4f54-8287-006327e7bf4d', 'Oftalbot')
 	.setAsTypeUser() 
 	.setAsTypeAgent() 
-	.setPlatform('PLATFORM-Z') 
+	.setPlatform('Dialogflow') 
 	.setMessage('MY MESSAGE') 
 	.setIntent('book-flight') 
 	.setAsHandled() 
