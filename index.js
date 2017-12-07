@@ -5,8 +5,8 @@ const app = express();
 app.use(require('body-parser').json());
 app.listen(process.env.PORT || 8080);
 var chatbase = require('@google/chatbase')
-	.setApiKey(process.env.MY_CHATBASE_KEY) // Your Chatbase API Key
-	.setPlatform('PLATFORM-X'); // The platform you are interacting with the user over
+	.setApiKey(process.env.c0f0424f-cf81-4f54-8287-006327e7bf4d) // Your Chatbase API Key
+	.setPlatform('Dialogflow'); // The platform you are interacting with the user over
 
 app.post("/webhook", (req, res, next) => {  
   const action = req.body.result.action;
