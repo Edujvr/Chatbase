@@ -11,18 +11,18 @@ app.post("/webhook", (req, res, next) => {
     case 'prueba':
 
 	var msg = chatbase.newMessage('my-api-key', 'my-user-id')
-	.setAsTypeUser() // sets the message as type user
-	.setAsTypeAgent() // sets the message as type agent
-	.setPlatform('PLATFORM-Z') // sets the platform to the given value
-	.setMessage('MY MESSAGE') // the message sent by either user or agent
-	.setIntent('book-flight') // the intent of the sent message (does not have to be set for agent messages)
-	.setAsHandled() // set the message as handled -- this means the bot understood the message sent by the user
-	.setAsNotHandled() // set the message as not handled -- this means the opposite of the preceding
-	.setVersion('1.0') // the version that the deployed bot is
-	.setUserId('user-1234') // a unique string identifying the user which the bot is interacting with
-	.setAsFeedback() // sets the message as feedback from the user
-	.setAsNotFeedback() // sets the message as a regular message -- this is the default
-	.setMessageId('123'); // the id of the message, this is optional
+	.setAsTypeUser() 
+	.setAsTypeAgent() 
+	.setPlatform('PLATFORM-Z') 
+	.setMessage('MY MESSAGE') 
+	.setIntent('book-flight') 
+	.setAsHandled() 
+	.setAsNotHandled() 
+	.setVersion('1.0') 
+	.setUserId('user-1234') 
+	.setAsFeedback() 
+	.setAsNotFeedback() 
+	.setMessageId('123') 
 	.send()
 	.then(msg => console.log(msg.getCreateResponse()))
 	.catch(err => console.error(err));
