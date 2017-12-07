@@ -2,7 +2,7 @@
 
 var chatbase = require('@google/chatbase')
 	.setApiKey(process.env.MY_CHATBASE_KEY) // Your Chatbase API Key
-	.setPlatform('PLATFORM-X') // The platform you are interacting with the user over
+	.setPlatform('PLATFORM-X'); // The platform you are interacting with the user over
 
 app.post("/webhook", (req, res, next) => {  
   const action = req.body.result.action;
