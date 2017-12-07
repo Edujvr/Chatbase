@@ -1,7 +1,7 @@
 'use estrict'
 
 var chatbase = require('@google/chatbase')
-	.setApiKey(process.env.c0f0424f-cf81-4f54-8287-006327e7bf4d) // Your Chatbase API Key
+	.setApiKey(c0f0424f-cf81-4f54-8287-006327e7bf4d) // Your Chatbase API Key
 	.setPlatform('PLATFORM-X') // The platform you are interacting with the user over
 
 app.post("/webhook", (req, res, next) => {  
