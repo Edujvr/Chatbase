@@ -6,17 +6,13 @@ var chatbase = require('@google/chatbase')
 	.setAsTypeUser(); // The type of message you are sending to chatbase: user (user) or agent (bot)
 
 app.post("/webhook", (req, res, next) => {  
-console.log('entro aqui');
   const action = req.body.result.action;
-  console.log(action);
   switch(action) {   
     case 'prueba':
 
-var msg = chatbase.newMessage('my-api-key', 'my-user-id')
+	var msg = chatbase.newMessage('my-api-key', 'my-user-id')
 	.setAsTypeUser() // sets the message as type user
 	.setAsTypeAgent() // sets the message as type agent
-	// WARNING: setTimestamp() should only be called with a Unix Epoch with MS precision
-	.setTimestamp(Date.now().toString()) // Only unix epochs with Millisecond precision
 	.setPlatform('PLATFORM-Z') // sets the platform to the given value
 	.setMessage('MY MESSAGE') // the message sent by either user or agent
 	.setIntent('book-flight') // the intent of the sent message (does not have to be set for agent messages)
@@ -31,7 +27,7 @@ var msg = chatbase.newMessage('my-api-key', 'my-user-id')
 	.then(msg => console.log(msg.getCreateResponse()))
 	.catch(err => console.error(err));
 
-res.json({
+	res.json({
             messages: req.body.result.fulfillment.messages,
             speech: req.body.result.fulfillment.speech,
             displayText: req.body.result.fulfillment.speech,
