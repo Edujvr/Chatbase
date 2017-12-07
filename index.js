@@ -1,5 +1,9 @@
 'use estrict'
 
+const express = require('express');
+const app = express();
+app.use(require('body-parser').json());
+app.listen(process.env.PORT || 8080);
 var chatbase = require('@google/chatbase')
 	.setApiKey(process.env.MY_CHATBASE_KEY) // Your Chatbase API Key
 	.setPlatform('PLATFORM-X'); // The platform you are interacting with the user over
