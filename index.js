@@ -12,16 +12,10 @@ app.post("/webhook", (req, res, next) => {
     case 'prueba':
 
 	var msg = chatbase.newMessage('c0f0424f-cf81-4f54-8287-006327e7bf4d', 'user-1234')
-	.setAsTypeUser() 
-	.setAsTypeAgent() 
 	.setPlatform('Dialogflow') 
 	.setMessage('MY MESSAGE') 
-	.setIntent('book-flight') 
-	.setAsHandled() 
-	.setAsNotHandled() 
+	.setIntent('book-flight')  
 	.setVersion('1.0') 
-	.setAsFeedback() 
-	.setAsNotFeedback() 
 	.setMessageId('123') 
 	.send()
 	.then(msg => console.log(msg.getCreateResponse()))
