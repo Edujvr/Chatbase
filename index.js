@@ -13,8 +13,8 @@ app.post("/webhook", (req, res, next) => {
 
 	var msg = chatbase.newMessage('c0f0424f-cf81-4f54-8287-006327e7bf4d', 'user-1234')
 	.setPlatform('Dialogflow') 
-	.setMessage('MY MESSAGE') 
-	.setIntent('book-flight')  
+	.setMessage(req.body.result.resolvedQuery) 
+	.setIntent(req.body.result.metadata.intentName)  
 	.setVersion('1.0') 
 	.setMessageId('123') 
 	.send()
