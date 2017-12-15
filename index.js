@@ -11,7 +11,7 @@ app.post("/webhook", (req, res, next) => {
   switch(action) {   
     case 'control':
 
-	var msg = chatbase.newMessage('c0f0424f-cf81-4f54-8287-006327e7bf4d', req.body.sessionId)
+	var msg = chatbase.newMessage('da9339a8-3149-4788-b348-8ddf5a3046a7', req.body.sessionId)
 	.setPlatform('Dialogflow') 
 	.setMessage(req.body.result.resolvedQuery) 
 	.setIntent(req.body.result.metadata.intentName)  
