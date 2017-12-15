@@ -9,7 +9,7 @@ var chatbase = require('@google/chatbase');
 app.post("/webhook", (req, res, next) => {  
   const action = req.body.result.action;
   switch(action) {   
-    case 'prueba':
+    case 'control':
 
 	var msg = chatbase.newMessage('c0f0424f-cf81-4f54-8287-006327e7bf4d', req.body.sessionId)
 	.setPlatform('Dialogflow') 
