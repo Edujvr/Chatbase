@@ -11,12 +11,12 @@ app.post("/webhook", (req, res, next) => {
   switch(action) {   
     case 'prueba':
 
-	var msg = chatbase.newMessage('c0f0424f-cf81-4f54-8287-006327e7bf4d', 'user-1234')
+	var msg = chatbase.newMessage('c0f0424f-cf81-4f54-8287-006327e7bf4d', req.body.sessionId)
 	.setPlatform('Dialogflow') 
 	.setMessage(req.body.result.resolvedQuery) 
 	.setIntent(req.body.result.metadata.intentName)  
 	.setVersion('1.0') 
-	.setMessageId('123') 
+	.setMessageId(req.body.id) 
 	.send()
 	.then(msg => console.log(msg.getCreateResponse()))
 	.catch(err => console.error(err));
