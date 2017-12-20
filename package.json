@@ -1,7 +1,7 @@
 {
   "name": "apiai-nodejs-webhook-sample",
   "version": "1.0.0",
-  "description": "a sample webhook (with authentication) for api.ai",
+  "description": "Webhook connection for dialogflow with Google Analyrics and Chatbase",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/supermamon/apiai-nodejs-webhook-sample.git"
@@ -14,7 +14,7 @@
     "apiai",
     "webhook"
   ],
-  "author": "Raymond Velasquez <at.supermamon@gmail.com> (https://supermamon.com)",
+  "author": "Eduardo Tandazo",
   "license": "ISC",
   "dependencies": {
     "@google/chatbase": "1.0.0",
