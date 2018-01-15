@@ -36,6 +36,6 @@ app.post("/webhook", (req, res, next) => {
             contextOut: req.body.result.contexts,
             source: req.body.result.source
           });
-      break; 
+      break;  
   }
 });
