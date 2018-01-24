@@ -9,8 +9,6 @@ var request = require('request');
 
 app.post("/webhook", (req, res, next) => {  
   const action = req.body.result.action;
-  switch(action) {   
-    case 'control':
 //Envio de información webhook a Dialogflow		  
 	res.json({
             messages: req.body.result.fulfillment.messages,
@@ -18,7 +16,9 @@ app.post("/webhook", (req, res, next) => {
             displayText: req.body.result.fulfillment.speech,
             contextOut: req.body.result.contexts,
             source: req.body.result.source
-          }); 	  
+          }); 	
+  switch(action) {   
+    case 'control':  
 //Envio de información a Chatbase libreria @google/chatbase
 	var msg = chatbase.newMessage('da9339a8-3149-4788-b348-8ddf5a3046a7', req.body.sessionId)
 	.setPlatform('Dialogflow') 
@@ -38,14 +38,6 @@ app.post("/webhook", (req, res, next) => {
         });
       break; 
 	case 'nothandled':
-//Envio de información webhook a Dialogflow		  
-	res.json({
-            messages: req.body.result.fulfillment.messages,
-            speech: req.body.result.fulfillment.speech,
-            displayText: req.body.result.fulfillment.speech,
-            contextOut: req.body.result.contexts,
-            source: req.body.result.source
-          });
 //Envio de información a Chatbase libreria @google/chatbase
 	var msg = chatbase.newMessage('da9339a8-3149-4788-b348-8ddf5a3046a7', req.body.sessionId)
 	.setPlatform('Dialogflow') 
